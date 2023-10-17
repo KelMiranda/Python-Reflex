@@ -3,6 +3,8 @@ from rxconfig import config
 
 import reflex as rx
 
+from .components.navbar import navbar
+
 docs_url = "https://reflex.dev/docs/getting-started/introduction"
 filename = f"{config.app_name}/{config.app_name}.py"
 
@@ -14,15 +16,7 @@ class State(rx.State):
 
 
 def index() -> rx.Component:
-    return rx.hstack(
-        rx.text(
-            "Kelvin Miranda",
-            height="40px"
-        ),
-        position="sticky",
-        padding="16px"
-
-    )
+    return navbar()
 
 # Add state and page to the app.
 app = rx.App()
